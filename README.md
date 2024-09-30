@@ -1,5 +1,7 @@
-## Image Acqusition Using Web Camera
-## Aim:
+# EXP 2 -Image_Acqusition-_using_Web_Camera
+## Aim
+ 
+Aim:
  
 To write a python program using OpenCV to capture the image from the web camera and do the following image manipulations.
 i) Write the frame as JPG 
@@ -11,32 +13,36 @@ iv) Rotate and display the video
 Anaconda - Python 3.7
 ## Algorithm
 ### Step 1:
-Import the cv2 and numpy package.
+Use cv2.VideoCapture(0) to access web camera
+
 ### Step 2:
-Read the Video frame using the cv2.VideoCapture(0)
+Use cv2.imread to read the video or image
+
 ### Step 3:
-Write the image using imwrite().
+Use cv2.imwrite to save the image
+
 ### Step 4:
-Display the frame using the imshow().
+Use cv2.imshow to show the video
+
 ### Step 5:
-Divide the frame into halves and assign the smaller frame
+End the program and close the output video window by pressing 'q'.
+
 ## Program:
- 
+
 ### Developed By: Chandrasekar S
 ### Register No: 212222230025
 
 ## i) Write the frame as JPG file
 ```
-import numpy as np
 import cv2
-cap=cv2.VideoCapture(0)
-while True:
-    ret,frame=cap.read()
-    cv2.imshow('str',frame)
-    if cv2.waitKey(1)==ord('q'):
-        break
-cap.release()
+videoCaptureObject=cv2.VideoCapture(0)
+while(True):
+    ret,frame=videoCaptureObject.read()
+    cv2.imwrite("safeeq.jpg",frame)
+    result=False
+videoCaptureObject.release()
 cv2.destroyAllWindows()
+
 ```
 
 
@@ -48,13 +54,14 @@ import cv2
 cap=cv2.VideoCapture(0)
 while True:
     ret,frame=cap.read()
-    cv2.imshow('str',frame)
+    cv2.imshow('image',frame)
     if cv2.waitKey(1)==ord('q'):
         break
 cap.release()
 cv2.destroyAllWindows()
-```
 
+
+```
 
 
 
@@ -73,16 +80,20 @@ while True:
     image[height//2:, :width//2]=smaller_frame
     image[:height//2, width//2:]=smaller_frame
     image[height//2:, width//2:]=smaller_frame
-    cv2.imshow('Video',image)
+    cv2.imshow('212222240086_safeeq',image)
     if cv2.waitKey(1)==ord('q'):
         break
 cap.release()
 cv2.destroyAllWindows()
+
+
 ```
 
 
 
+
 ## iv) Rotate and display the video
+
 ```
 import numpy as np
 import cv2
@@ -97,35 +108,40 @@ while True:
     image[height//2:, :width//2]=smaller_frame
     image[:height//2, width//2:]=cv2.rotate(smaller_frame,cv2.ROTATE_180)
     image[height//2:, width//2:]=smaller_frame
-    cv2.imshow('Rotated Video',image)
+    cv2.imshow('212222240086_safeeq',image)
     if cv2.waitKey(1)==ord('q'):
         break
 cap.release()
 cv2.destroyAllWindows()
-```
 
+
+
+
+
+
+
+
+```
 
 ## Output
 
 ### i) Write the frame as JPG image
+![Screenshot 2024-02-29 192944](https://github.com/Safeeq-Fazil/Image_Acqusition-_using_Web_Camera/assets/118680361/c8b0286b-c534-4257-969a-5eecda36c129)
 
-![Screenshot 2024-09-26 153618](https://github.com/user-attachments/assets/969c6783-2314-4d40-b891-5497953c78c5)
 
 
 ### ii) Display the video
-
-![Screenshot 2024-09-26 153618](https://github.com/user-attachments/assets/f693791b-3571-460d-8791-b9713c2fd594)
+![Screenshot 2024-02-29 193043](https://github.com/Safeeq-Fazil/Image_Acqusition-_using_Web_Camera/assets/118680361/d5f3c4c5-00e0-4308-afe1-7757d822bacc)
 
 
 ### iii) Display the video by resizing the window
-
-![Screenshot 2024-09-26 153656](https://github.com/user-attachments/assets/345af85a-686c-4ee7-aed9-e1f7ca194fb2)
+![Screenshot 2024-02-29 193111](https://github.com/Safeeq-Fazil/Image_Acqusition-_using_Web_Camera/assets/118680361/5342e510-6666-4779-8086-885e74cc124e)
 
 
 
 ### iv) Rotate and display the video
+![image](https://github.com/Safeeq-Fazil/Image_Acqusition-_using_Web_Camera/assets/118680361/dd657881-1c67-4d17-8b5a-8e32b2094cce)
 
-![Screenshot 2024-09-26 153728](https://github.com/user-attachments/assets/4e2be0ea-1169-49b8-974a-0958db4d844a)
 
 
 ## Result:
